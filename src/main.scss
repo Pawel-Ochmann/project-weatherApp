@@ -1,4 +1,5 @@
 @import '@fortawesome/fontawesome-free/css/all.css';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
 html {
   --main-theme-color: #1c8da2;
@@ -12,9 +13,11 @@ html {
 html {
   padding: 0;
   margin: 0;
+  font-family: 'Open Sans', Arial, sans-serif;
 }
 
 main {
+  color: white;
   margin-left: auto;
   margin-right: auto;
   width: 80%;
@@ -33,6 +36,8 @@ main {
         font-size: 1.3rem;
         padding: 0.2rem;
         border: none;
+        font-weight: lighter;
+        color: rgb(71, 71, 71);
       }
     }
     button {
@@ -46,5 +51,11 @@ main {
       right: 0;
       top: 0;
     }
+  }
+
+  h1 {
+    margin: 0;
+    font-weight: 500;
+    font-size: 2.5rem;
   }
 }

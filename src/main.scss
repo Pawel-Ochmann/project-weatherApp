@@ -1,13 +1,50 @@
+@import '@fortawesome/fontawesome-free/css/all.css';
+
+html {
+  --main-theme-color: #1c8da2;
+  --main-bgc-color: #1b4778;
+}
+
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 main {
-    width: 50rem;
-    border:2px solid black;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  background-color: var(--main-bgc-color);
+  display: flex;
+  flex-direction: column;
+  height: 20rem;
+  padding: 0.5rem;
+  form {
+    display: flex;
+    label {
+      flex-grow: 1;
+      position: relative;
+      input {
+        width: 100%;
+        font-size: 1.3rem;
+        padding: 0.2rem;
+        border: none;
+      }
+    }
+    button {
+      background-color: var(--main-theme-color);
+      border: none;
+      cursor: pointer;
+      height: 100%;
+      width: 2rem;
+      color: white;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
 }

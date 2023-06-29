@@ -3,10 +3,14 @@ import getData from './getData';
 
 const main = document.querySelector('main');
 const button = document.querySelector('button');
-button.addEventListener('click', async (e) => {
-  e.preventDefault();
+
+async function loadWeather() {
   const location = document.querySelector('input').value;
   const weather = await getData.getWeather(location);
-  main.textContent = JSON.stringify(weather);
-});
+  console.log(JSON.stringify(weather));
+}
 
+button.addEventListener('click', async (e) => {
+  e.preventDefault();
+  loadWeather();
+});

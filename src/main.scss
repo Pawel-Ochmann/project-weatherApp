@@ -58,4 +58,31 @@ main {
     font-weight: 500;
     font-size: 2.5rem;
   }
+  .weatherDetails {
+    background-color: rgba($color: #ffffff, $alpha: 0.1);
+    padding: 0.2rem 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 3fr;
+    justify-content: start;
+    & > p:first-child {
+      grid-column: 1 / -1;
+    }
+    img {
+      width: 6rem;
+      aspect-ratio: 1;
+    }
+    .tempContainer {
+      display: flex;
+      gap: .5rem;
+      h1 {
+        font-size: 4rem;
+        align-self: end;
+      }
+      p {
+        font-size: 1.5rem;
+        align-self: end;
+        margin-bottom: .7rem;
+      }
+    }
+  }
 }

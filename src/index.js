@@ -1,6 +1,5 @@
 import './main.scss';
 import getData from './getData';
-import weatherList from './weatherList';
 
 const container = document.querySelector('.container');
 const button = document.querySelector('button');
@@ -35,11 +34,42 @@ async function loadWeather() {
     tempContainer.appendChild(temperature);
     const temperatureFahrenheit = document.createElement('p');
     temperatureFahrenheit.textContent = `(${weather.current.temp_f}°F)`;
-    tempContainer.appendChild(temperatureFahrenheit)
+    tempContainer.appendChild(temperatureFahrenheit);
     weatherDetails.appendChild(tempContainer);
+    const moreInfo = document.createElement('div');
+    moreInfo.classList.add('moreInfo');
+    const moreInfoHeader = document.createElement('h3');
+    moreInfoHeader.textContent = weather.current.condition.text;
+    moreInfo.appendChild(moreInfoHeader);
+    const feelingInfo = document.createElement('div');
+    const feelingHeader = document.createElement('h4');
+    feelingHeader.textContent = 'Feelslike';
+    feelingInfo.appendChild(feelingHeader);
+    const feelingTemp = document.createElement('p');
+    feelingTemp.textContent = `${weather.current.feelslike_c}°C/${weather.current.feelslike_f}°F`;
+    feelingInfo.appendChild(feelingTemp);
+    moreInfo.appendChild(feelingInfo);
+    const pressureInfo = document.createElement('div');
+    const pressureHeader = document.createElement('h4');
+    pressureHeader.textContent = 'Pressure';
+    pressureInfo.appendChild(pressureHeader);
+    const pressureValue = document.createElement('p');
+    pressureValue.textContent = `${weather.current.pressure_mb} hPa`;
+    pressureInfo.appendChild(pressureValue);
+    moreInfo.appendChild(pressureInfo);
+    const windInfo = document.createElement('div');
+    const windHeader = document.createElement('h4');
+    windHeader.textContent = 'Wind';
+    windInfo.appendChild(windHeader);
+    const windValue = document.createElement('p');
+    windValue.textContent = `${weather.current.wind_kph} km/h`;
+    windInfo.appendChild(windValue);
+    moreInfo.appendChild(windInfo);
 
+    weatherDetails.appendChild(moreInfo);
     container.appendChild(weatherDetails);
   } catch (err) {
+    console.log(err);
     const errorInfo = document.createElement('h1');
     errorInfo.textContent =
       'We are sorry, could not find location You are looking for. Please try again';

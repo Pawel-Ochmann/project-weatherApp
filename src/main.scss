@@ -20,15 +20,17 @@ html {
 
 body {
   text-align: center;
+  padding-top: 5rem;
 }
 
 main {
   gap: 1rem;
   text-align: initial;
   color: white;
+  margin-top: 2rem;
   margin-left: auto;
   margin-right: auto;
-  width: 90%;
+  width: clamp(45rem, 90%, 70rem);
   background-color: var(--main-bgc-color);
   display: flex;
   flex-direction: column;
@@ -114,6 +116,23 @@ main {
       p {
         font-weight: bold;
       }
+    }
+  }
+  .spinner {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    height: 10rem;
+    width: 10rem;
+    border: .5rem solid;
+    border-color:rgba(255, 255, 255, 0.6) transparent rgba(255, 255, 255, 0.6) transparent;
+    border-radius: 50%;
+    animation: spin 1s ease-in-out infinite;
+  }
+
+  @keyframes spin {
+    to {
+      transform:rotate(360deg);
     }
   }
 }

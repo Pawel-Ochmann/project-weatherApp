@@ -4,6 +4,14 @@ import getData from './getData';
 const container = document.querySelector('.container');
 const button = document.querySelector('button');
 
+function getLoader() {
+  container.textContent = '';
+  const spinner = document.createElement('div');
+  spinner.classList.add('spinner');
+
+  container.appendChild(spinner);
+}
+
 async function loadWeather() {
   container.textContent = '';
   try {
@@ -79,5 +87,6 @@ async function loadWeather() {
 
 button.addEventListener('click', async (e) => {
   e.preventDefault();
-  loadWeather();
+  getLoader();
+  setTimeout(loadWeather, 2000);
 });
